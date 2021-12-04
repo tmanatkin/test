@@ -10,6 +10,7 @@ nav{
 h1{
     display: block;
     font-size: 100px;
+    font-family: 'Poppins', sans-serif;
 }
 .navbar{
     display: flex;
