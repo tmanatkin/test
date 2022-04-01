@@ -52,3 +52,22 @@ responsiveNavItems.map(function (responsiveNavItem) {
 });
 
 });
+
+// Display Text
+function displayText(button, text) {
+    var btnText = document.getElementById(button);
+    var moreText = document.getElementById(text);
+  
+    if(moreText.style.display === "inline") {
+      btnText.innerHTML = "Read More";
+      moreText.style.display = "none";
+      moreText.style.textAlign = "left";
+    }
+    else{
+      btnText.innerHTML = "Read Less";
+      
+      moreText.style.display = "inline";
+
+      moreText.style.textAlign = "left";
+    }
+  }

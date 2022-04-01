@@ -40,6 +40,7 @@
             margin: 0px auto 0px auto;
             border-collapse: collapse;
             background-color: #f8f9f8;
+            width: 70%;
             }
             tr:hover{
                 background-color: #dddddd;
@@ -47,7 +48,7 @@
             td{
                 border: 2px solid;
                 padding: 5px;
-                color: #212529;;
+                color: #212529;
             }
             thead{
                 font-weight: 700;
@@ -66,6 +67,39 @@
             }
             .tableauPlaceholder{
                 margin: auto;
+            }
+            #recognizeText, #reportText, #supportText{
+                display: none;
+            }
+            #showRecognize, #showReport, #showSupport{
+                color: #f9fafb;
+                background-color: #D46E24;
+                border: none;
+                border-radius: 5px;
+                width: 105px;
+                height: 35px;
+                transition: 0.2s;
+                margin-bottom: 150px;
+            }
+            #showRecognize:hover, #showReport:hover, #showSupport:hover{
+                color: #D46E24;
+                background-color: #f9fafb;
+                border: 2px solid #D46E24;
+            }
+            .columnContainer{
+                display: inline;
+                width: 520px;
+                height: 170px;
+                margin: 20px;
+            }
+            #linkContainer{
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: space-evenly;
+                flex-direction: row;
+                flex-wrap: wrap;
+                margin: 0px;
             }
         </style>
         <!-- JavaScript -->
@@ -112,7 +146,9 @@
                     </p>
                 </div>
                 <h3 class="section-subheading">Human Trafficking Statistics</h3>
-                <div class='tableauPlaceholder' id='viz1648608957340' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Hu&#47;HumanTrafficking_16485984114830&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='HumanTrafficking_16485984114830&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Hu&#47;HumanTrafficking_16485984114830&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1648608957340');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='977px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>            </div>
+                <div class='tableauPlaceholder' id='viz1648608957340' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Hu&#47;HumanTrafficking_16485984114830&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='HumanTrafficking_16485984114830&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Hu&#47;HumanTrafficking_16485984114830&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1648608957340');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='977px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                <br><p class="sectionDescription" style="text-align: center;">Data taken from the Counter Trafficking Data Collaborative (CTDC) Global Datset</p>
+            </div>
         </section>
         <!-- Who -->
         <section class="page-section bg-light" id="who">
@@ -352,9 +388,7 @@
                     ];
             
                     // Write other HTML
-                    document.write(`
-                    <h1 id="tableTitle">Missing Persons Cases Ages 0 - 27 in the State of Utah</h1>
-                    `);
+                    document.write("<h1 id='tableTitle'>Missing Persons Cases Ages 0 - 27 in the State of Utah</h1>");
             
                     // Write Table
                     document.write("<table>");
@@ -402,22 +436,25 @@
                         </span>
                         <h4 class="my-3">Recognize</h4>
                         <p class="text-muted">
+                            By knowing what human trafficking is you can play an important role in identifying and supporting victims in Utah.
                             Recognizing key indicators of human trafficking is an important step in identifying victims and can help save a life.
-                            <br><br>
-                            <b>Here are some possible indicators:</b>
-                            <br>- Recruited with false promises
-                            <br>- Signs of untreated illness or injuries
-                            <br>- Juvenile exchanging sex acts to meet basic needs
-                            <br>- Works excessive hours for little or no pay
-                            <br>- Does not have possession of legal/travel documents
-                            <br>- Controlled/restricted communication/fearful
-                            <br>- Older boyfriend/girlfriend/companion
-                            <br>- Unable to speak separately or alone
-                            <br>- Allegedly owes money to employer
-                            <br>- Tattoos/branding on the neck and/or lower back
-                            <br><br>
-                            Each indicator alone may not necessarily mean a person is being trafficked. However, if you see a combination of these signs, be attentive and report potential trafficking situations.
+                            <span id="recognizeText">
+                                <br><br>
+                                <b>Here are some possible indicators:</b>
+                                <br>- Recruited with false promises
+                                <br>- Signs of untreated illness or injuries
+                                <br>- Juvenile exchanging sex acts to meet basic needs
+                                <br>- Works excessive hours for little or no pay
+                                <br>- Does not have possession of legal/travel documents
+                                <br>- Controlled/restricted communication/fearful
+                                <br>- Older boyfriend/girlfriend/companion
+                                <br>- Unable to speak separately or alone
+                                <br>- Allegedly owes money to employer
+                                <br><br>
+                                Each indicator alone may not necessarily mean a person is being trafficked. However, if you see a combination of these signs, be attentive and report potential trafficking situations.
+                            </span>
                         </p>
+                        <button id="showRecognize" onclick="displayText('showRecognize', 'recognizeText')">Read More</button>
                     </div>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
@@ -426,15 +463,20 @@
                         </span>
                         <h4 class="my-3">Report</h4>
                         <p class="text-muted">
-                            <b>If you believe you may have information about a potential trafficking situation:</b>
-                            <br>- Do not at any time attempt to confront a suspected trafficker directly or alert a victim to your suspicions.
-                            <br>- Call 911 for emergency situations (threats of violence, physical assault, emergency medical needs, etc.)
-                            <br>- If you are a victim of forced labor or commercial sex or concerned that someone may be, contact the 
-                            <b>National Human Trafficking Hotline at 888-373-7888; Text “BEFREE” to 233733; or Live Chat at humantraffickinghotline.org.</b>
-                            <br>- Utahans can also report suspected human trafficking to the Utah Human Trafficking Tip line at 801-200-3443. The 24-hour tip line is run by the Utah Attorney General’s Office and answered by a voicemail machine. Note: Not intended for emergencies. Leave message and you will be contacted.
-                            <br><br>
-                            When making a report please give as much information and detail as possible.
+                            If you are a victim of forced labor or commercial sex or concerned that someone may be, contact the 
+                            <br><b>National Human Trafficking Hotline at 888-373-7888;<br>Text “BEFREE” to 233733;<br>or Live Chat at
+                                <a href="https://www.humantraffickinghotline.org" target="_blank">humantraffickinghotline.org</a>.</b>
+                            <span id="reportText">
+                                <br><br>
+                                <b>If you believe you may have information about a potential trafficking situation:</b>
+                                <br>- Do not at any time attempt to confront a suspected trafficker directly or alert a victim to your suspicions.
+                                <br>- Call 911 for emergency situations (threats of violence, physical assault, emergency medical needs, etc.)
+                                <br>- Utahans can also report suspected human trafficking to the Utah Human Trafficking Tip line at 801-200-3443. The 24-hour tip line is run by the Utah Attorney General’s Office and answered by a voicemail machine. Note: Not intended for emergencies. Leave message and you will be contacted.
+                                <br><br>
+                                When making a report please give as much information and detail as possible.
+                            </span>
                         </p>
+                        <button id="showReport" onclick="displayText('showReport', 'reportText')">Read More</button>
                     </div>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
@@ -443,15 +485,31 @@
                         </span>
                         <h4 class="my-3">Support</h4>
                         <p class="text-muted">
-                            Human trafficking is an overwhelming topic, and it’s easy to feel like there is nothing you can do to combat this injustice. However, you can be part of the solution in so many ways.
-                            <br><br>
-                            <b>Some ideas include:</b>
-                            <br>- Volunteer with local anti-trafficking efforts.
-                            <br>- Meet with or write to your local, state, and federal elected officials to let them know you care about combating human trafficking and ask what they are doing to address it.
-                            <br>- Be well-informed. Set up notifications to receive current human trafficking news.
-                            <br>- Organize a fundraiser and donate the proceeds to an anti-trafficking organization.
-                            <br>- Use your social media platforms to raise awareness about human trafficking, using the following hashtags: <b>#endtraffickingutah</b> or <b>#betheoneutah</b>. Follow local, state, and national anti-trafficking social media accounts.
+                            Use your social media platforms to raise awareness about human trafficking, using the following hashtags:
+                            <b>#endtraffickingutah</b> or <b>#betheoneutah</b>. Follow local, state, and national anti-trafficking social media accounts.
+                            <span id="supportText">
+                                <br><br>
+                                Human trafficking is an overwhelming topic, and it’s easy to feel like there is nothing you can do to combat this injustice. However, you can be part of the solution in so many ways.
+                                <br><br>
+                                <b>Some ideas include:</b>
+                                <br>- Volunteer with local anti-trafficking efforts.
+                                <br>- Meet with or write to your local, state, and federal elected officials to let them know you care about combating human trafficking and ask what they are doing to address it.
+                                <br>- Be well-informed. Set up notifications to receive current human trafficking news.
+                                <br>- Organize a fundraiser and donate the proceeds to an anti-trafficking organization.
+                            </span>
                         </p>
+                        <button id="showSupport" onclick="displayText('showSupport', 'supportText')">Read More</button>
+                    </div>
+                </div>
+                <h3 class="section-subheading">For More Information and Resources Visit</h3>
+                <div id="linkContainer">
+                    <div class="columnContainer" style="margin: auto;">
+                        <p>Counter Trafficking Data Collaberative (CTDC)<br><a target="_blank" href="https://www.ctdatacollaborative.org">ctdatacollaborative.org</a></p>
+                        <br><p>Utah Statistics | National Human Trafficking Hotline<br><a target="_blank" href="https://humantraffickinghotline.org/state/utah">humantraffickinghotline.org/state/utah</a></p>
+                    </div>
+                    <div class="columnContainer">
+                        <p>How to Help with Human Trafficking in Utah | Deseret News<br><a target="_blank" href="https://www.deseret.com/utah/2021/10/8/22716453/aspen-house-utah-human-trafficking-recovery-center-kicks-off-fundraising-efforts-salt-lake-city">deseret.com/utah/2021/10/8/22716453</a></p>
+                        <br><p>Utah Human Trafficking Report Card | Shared Hope<br><a target="_blank" href="https://sharedhope.org/PICframe7/reportcards/PIC_RC_2017_UT.pdf">sharedhope.org/PICframe7/reportcards/PIC_RC_2017_UT</a></p>
                     </div>
                 </div>
             </div>
@@ -461,7 +519,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-4 text-lg-start">Created by Tanner Atkin</div>
-                    <div class="col-lg-4 text-lg-center">Last Modified: 29 March 2022</div>
+                    <div class="col-lg-4 text-lg-center">Last Modified: 31 March 2022</div>
                     <div class="col-lg-4 text-lg-end">Bootstrap Template</div>
                 </div>
             </div>
