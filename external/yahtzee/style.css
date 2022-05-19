@@ -1,0 +1,287 @@
+#compScoreAlertContainer{
+    width: 1000px;
+    height: 500px;
+    padding: 50px 50px 100px 50px;
+    border: 5px solid black;
+    border-radius: 50px;
+    background-color: rgba(0, 0, 0, 0.75);
+    margin: 0px 0px 0px 95px;
+    position: absolute;
+    display: none;
+}
+#compScoreAlert{
+    font-size: 50px;
+    color: white;
+}
+#compScoreContinueButton{
+    width: 250px;
+}
+#compScoreAlertContainer img{
+    width: 50px;
+}
+body{
+    margin: 20px;
+    scroll-behavior: smooth;
+}
+#pageContainer{
+    margin: auto;
+    width: 1450px;
+    height: 660px;
+    margin-top: 75px;
+    display: block;
+}
+#gameContainer{
+    width: 1000px;
+    height: 500px;
+    padding: 50px 50px 100px 50px;
+    border: 5px solid black;
+    border-radius: 50px;
+    display: inline-block;
+    margin: 0px;
+}
+#startInstructions{
+    text-align: center;
+    font-size: 75px;
+    margin: 75px;
+}
+h1{
+    font-size: 150px;
+    font-family: Poppins;
+    font-weight: 800;
+    font-style: italic;
+    margin: 0px;
+    display: inline-block;
+}
+#buttonContainer{
+    text-align: right;
+    display: inline-block;
+    margin: 10px;
+}
+button{
+    height: 70px;
+    width: 150px;
+    margin: 0px 0px 0px 50px;
+    outline: none;
+    background-color: black;
+    border: 5px solid black;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 40px;
+    font-family: Poppins;
+    font-weight: 800;
+    transition: 0.3s; 
+}
+button:hover{
+    color: black;
+    background-color: white;
+}
+#rollsLeft{
+    font-size: 30px;
+    display: none;
+}
+#diceContainer{
+    display: flex;
+    justify-content: space-evenly;
+}
+#diceContainer img{
+    height: 150px;
+}
+#inputContainer{
+    display: flex;
+    justify-content: space-evenly;
+    height: 50px;
+}
+.diceKeep{
+    width: 25px;
+    height: 25px;
+    margin: 20px 60px 0px 60px;
+    display: none;
+}
+#checkboxInstructions{
+    display: none;
+    font-size: 31px;
+    margin: 30px 0px;
+}
+p{
+    font-size: 35px;
+    font-family: Poppins;
+    font-weight: 500;
+    transition: 0.15s;
+    margin: 0px;
+}
+#calculateScoresButton{
+    display: none;
+    vertical-align: top;
+    margin-top: 55px;
+    margin-left: none;
+}
+#scoresheetContainer{
+    float: right;
+    width: 250px;
+    height: 610px;
+    padding: 20px 20px 20px 20px;
+    border: 5px solid black;
+    border-radius: 50px;
+    vertical-align: top;
+    margin: 0px;
+}
+#scoresheetContainer form label{
+    display: block;
+    width: 175px;
+    height: 50px;
+    margin: 10px 0px 10px 0px;
+}
+#scoresheetContainer form label img{
+    width: 50px;
+    display: inline-block;    
+    margin: 0px 10px 0px 0px;
+}
+#scoresheetContainer form label p{
+    font-size: 35px;
+    font-family: Poppins;
+    font-weight: 500;
+    width: 65px;
+    height: 50px;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 5px;
+}
+#scoresheetContainer form input[type=radio]{
+    display: inline-block;
+    vertical-align:top;
+    margin-top: 20px;
+}
+#scoresheetContainer form{
+    display: inline-block;
+    width: 175px;
+    margin: 0px;
+}
+#scoresheetContainer form #myScoreTitle{
+    font-size: 30px;
+    line-height: 20px;
+    margin: 10px 0px 20px 0px;
+}
+#compContainer{
+    width: 70px;
+    height: 490px;
+    display: inline-block;
+    vertical-align: top;
+}
+#compContainer #compScoreTitle{
+    font-size: 20px;
+    line-height: 20px;
+    margin: 0px 0px 9px 0px;
+}
+.compScore{
+    font-size: 35px;
+    height: 50px;
+    margin: 0px 0px 25px 0px;
+    border-radius: 5px;
+    background-color: grey;
+    color: white;
+}
+.line{
+    width: 175px;
+    height: 5px;
+    background-color: black;
+}
+#totalLine{
+    width: 250px;
+}
+#endTurnButton{
+    font-size: 25px;
+    margin: auto;
+    width: 200px;
+    height: 50px;
+    display: block;
+    border-radius: 10px 10px 0px 0px;
+}
+#totalScoreContainer{
+    width: 190px;
+    height: 50px;
+    margin: 20px 0px 25px 0px;
+    float: right;
+}
+#totalScoreContainer p{
+    font-size: 35px;
+    vertical-align: top;
+    width: 62.5px;
+    height: 50px;
+    display: inline;
+    border-radius: 5px;
+    border: 5px solid black;
+}
+#totalScore{
+    float: left;
+}
+#compTotalScore{
+    float: right;
+}
+
+#scoreboardContainer{
+    width: 1350px;
+    height: 500px;
+    padding: 50px;
+    border: 5px solid black;
+    border-radius: 50px;
+    display: none;
+    margin: 40px auto;
+}
+#chartContainer{
+    display: inline-block;
+}
+#scoreboardContainer img{
+    width: 550px;
+    display: block;
+}
+.scoreBar{
+    height: 30px;
+    display: block;
+    margin: 5px 0px;
+}
+.scoreBarLabel{
+    font-size: 20px;
+    font-weight: 600;
+    display: inline-block;
+    width: 67px;
+    vertical-align: top;
+    text-align: right;
+}
+#myScoreDisplay, #compScoreDisplay{
+    height: 30px;
+    width: 350px;
+    background-color: #4075B4;
+    display: inline-block;
+}
+#compScoreDisplay{
+    background-color: #B44040;
+}
+#myScoreDisplay p, #compScoreDisplay p{
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    margin: 0px 10px 0px 0px;
+    float: right;
+}
+#scoreboardContainer .line{
+    display: inline-block;
+    width: 5px;
+    height: 500px;
+    margin: 0px 50px;
+}
+#storeScoreContainer{
+    display: inline-block;
+    vertical-align: top;
+    width: 600px;
+}
+#gameOutcomeHeader{
+    display: inline-block;
+    font-size: 50px;
+    font-weight: 700;
+}
+#gameOutcomeText{
+    display: inline-block;
+    font-size: 25px;
+}

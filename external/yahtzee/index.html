@@ -1,0 +1,170 @@
+<!-- 
+    Tanner Atkin
+    24 Mar 2022
+    Yahtzee Dice Game
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yahtzee!</title>
+    <script src="script.js"></script>
+    <link rel="icon" href="images/dieIcon.png"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="newTurn()">
+    <div id="compScoreAlertContainer">
+        <img id="compDice00" src="">
+        <img id="compDice01" src="">
+        <img id="compDice02" src="">
+        <img id="compDice03" src="">
+        <img id="compDice04" src="">
+        <img id="compDice05" src="">
+        <br><br>
+        <img id="compDice10" src="">
+        <img id="compDice11" src="">
+        <img id="compDice12" src="">
+        <img id="compDice13" src="">
+        <img id="compDice14" src="">
+        <img id="compDice15" src="">
+        <br><br>
+        <img id="compDice20" src="">
+        <img id="compDice21" src="">
+        <img id="compDice22" src="">
+        <img id="compDice23" src="">
+        <img id="compDice24" src="">
+        <img id="compDice25" src="">
+        <br><br>
+        <p id="compScoreAlert"></p>
+        <button id="compScoreContinueButton" onclick="document.getElementById('compScoreAlertContainer').style.display = 'none'">CONTINUE</button>
+    </div>
+    <div id="pageContainer">
+        <div id="gameContainer">
+            <h1>Yahtzee!</h1>
+            <div id="buttonContainer">
+                <p id="rollsLeft"></p>  
+                <button id="rollDiceButton" type="button" onclick="rollDice()">ROLL</button>
+            </div>
+            <p id="startInstructions">Click Roll to start.</p>
+            <div id="diceContainer">
+                <label for="diceKeep1">
+                    <img id="dice1" src="">
+                </label>
+                <label for="diceKeep2">
+                    <img id="dice2" src="">
+                </label>
+                <label for="diceKeep3">
+                    <img id="dice3" src="">
+                </label>
+                <label for="diceKeep4">
+                    <img id="dice4" src="">
+                </label>
+                <label for="diceKeep5">
+                    <img id="dice5" src="">
+                </label>
+                <label for="diceKeep6">
+                    <img id="dice6" src="">
+                </label>
+            </div>
+            <div id="inputContainer">
+                <input class="diceKeep" type="checkbox" id="diceKeep1" name="dice1" value="1">
+                <input class="diceKeep" type="checkbox" id="diceKeep2" name="dice2" value="2">
+                <input class="diceKeep" type="checkbox" id="diceKeep3" name="dice3" value="3">
+                <input class="diceKeep" type="checkbox" id="diceKeep4" name="dice4" value="4">
+                <input class="diceKeep" type="checkbox" id="diceKeep5" name="dice5" value="5">
+                <input class="diceKeep" type="checkbox" id="diceKeep6" name="dice6" value="6">
+            </div>
+            <p id="checkboxInstructions">Choose which dice you would like to keep.<br>You have up to 3 rolls. To end turn click done.</p>
+            <button id="calculateScoresButton" type="button" onclick="calculateScores()">DONE</button>
+        </div>
+        <div id="scoresheetContainer">
+            <div id="scoresContainer">
+                <form>
+                    <p id="myScoreTitle">MY SCORE</p>
+                    <label id="score1Label" for="score1">
+                        <img class="scoreDie" src="images/die1.png">
+                        <p id="score1Text"></p>
+                        <input type="radio" id="score1" name="scoreOption" value="score1" onclick="highlightLabel()">
+                    </label>
+                    <div class="line"></div>
+                    <label id="score2Label" for="score2">
+                        <img class="scoreDie" src="images/die2.png">
+                        <p id="score2Text"></p>
+                        <input type="radio" id="score2" name="scoreOption" value="score2" onclick="highlightLabel()">
+                    </label>
+                    <div class="line"></div>
+                    <label id="score3Label" for="score3">
+                        <img class="scoreDie" src="images/die3.png">
+                        <p id="score3Text"></p>
+                        <input type="radio" id="score3" name="scoreOption" value="score3" onclick="highlightLabel()">
+                    </label>
+                    <div class="line"></div>
+                    <label id="score4Label" for="score4">
+                        <img class="scoreDie" src="images/die4.png">
+                        <p id="score4Text"></p>
+                        <input type="radio" id="score4" name="scoreOption" value="score4" onclick="highlightLabel()">
+                    </label>
+                    <div class="line"></div>
+                    <label id="score5Label" for="score5">
+                        <img class="scoreDie" src="images/die5.png">
+                        <p id="score5Text"></p>
+                        <input type="radio" id="score5" name="scoreOption" value="score5" onclick="highlightLabel()">
+                    </label>
+                    <div class="line"></div>
+                    <label id="score6Label" for="score6">
+                        <img class="scoreDie" src="images/die6.png">
+                        <p id="score6Text"></p>
+                        <input type="radio" id="score6" name="scoreOption" value="score6" onclick="highlightLabel()">
+                    </label>
+                    <div class="line" id="totalLine"></div>
+                </form>
+                <div id="compContainer">
+                    <p id="compScoreTitle">COMP.<br>SCORE</p>
+                    <p class="compScore" id="compScore1"></p>
+                    <p class="compScore" id="compScore2"></p>
+                    <p class="compScore" id="compScore3"></p>
+                    <p class="compScore" id="compScore4"></p>
+                    <p class="compScore" id="compScore5"></p>
+                    <p class="compScore" id="compScore6"></p>
+                </div>
+            </div>
+            <div id="totalScoreContainer">
+                <p id="totalScore"></p>
+                <p id="compTotalScore"></p>
+            </div>
+            <button id="endTurnButton" type="button" onclick="endTurn()">END TURN</button>
+        </div>
+    </div>
+    <div id="scoreboardContainer">
+        <div id="chartContainer">
+            <img id="compChart" src="images/Chart.jpg">
+            <div class="scoreBar">
+                <p class="scoreBarLabel">You</p>
+                <div id="myScoreDisplay">
+                    <p id="myScoreNum"></p>
+                </div>
+            </div>
+            <div class="scoreBar">
+                <p class="scoreBarLabel">Comp</p>
+                <div id="compScoreDisplay">
+                    <p id="compScoreNum"></p>
+                </div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div id="storeScoreContainer">
+            <p id="gameOutcomeHeader"></p><br>
+            <p id="gameOutcomeText"></p>
+
+            <!-- Temporary -->
+            <br><br><br><br><br><br><br>
+            <p style="text-align: right;">Scoreboard coming soon...<br>- Tanner</p>
+
+            <br><br><br><br><br><br>
+            <p style="text-align: center;">Refresh page to play again!</p>
+        </div>
+    </div>
+</body>
+</html>
